@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Bambanza | Senior Systems & Backend Engineer</title>
+    <!-- Google Fonts: Inter for crisp, modern sans-serif typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131a2c;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #38bdf8;
+            --accent-dim: rgba(56, 189, 248, 0.15);
+            --border: #1f2937;
+            --badge-bg: #0369a1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            align-items: center;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge {
+            background-color: var(--badge-bg);
+            color: #e0f2fe;
+            padding: 5px 14px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.975rem;
+            font-weight: 400;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #334155;
+        }
+
+        .card h3 {
+            margin-bottom: 14px;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.925rem;
+        }
+
+        .card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .job-meta {
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .job-desc {
+            margin-bottom: 14px;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .project-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-list strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        .tag {
+            background-color: var(--accent-dim);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .edu-item .degree {
+            font-weight: 500;
+            color: #ffffff;
+            font-size: 0.975rem;
+        }
+
+        .edu-item .school {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 30px 16px; }
+            h1 { font-size: 2.2rem; }
+            .grid { grid-template-columns: 1fr; }
+            .job-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>EMMANUEL BAMBANZA, M.Sc.</h1>
+        <div class="subtitle">Senior Systems & Backend Engineer</div>
+        
+        <div class="meta-info">
+            <div class="meta-item">📍 Montreal, QC (Relocating)</div>
+            <div class="meta-item"><span class="badge">CANADIAN PR HOLDER</span></div>
+            <div class="meta-item">📞 [Your Virtual Phone Number]</div>
+            <div class="meta-item">✉️ <a href="mailto:bambanza@gmail.com">bambanza@gmail.com</a></div>
+            <div class="meta-item">💻 <a href="https://github.com" target="_blank">GitHub</a></div>
+        </div>
+    </header>
+
+    <section>
+        <h2>Overview</h2>
+        <p>
+            Systems-focused Backend Engineer with over 15 years of experience architecting, securing, and scaling national-level software infrastructure. Proven proficiency deploying containerized architecture via Docker, optimizing high-performance Linux network nodes, and engineering enterprise applications using PHP (Laravel) and Python. Deep expertise implementing critical database ecosystems for global international bodies (UN WHO, UNICEF) and government institutions. Arriving in Montreal with pre-approved Permanent Residency, authorized to begin full-time employment immediately.
+        </p>
+    </section>
+
+    <section>
+        <h2>Technical Core</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Systems & DevOps</h3>
+                <ul>
+                    <li>Linux System Administration & Security Hardening</li>
+                    <li>Docker Containerization & Environment Alignment</li>
+                    <li>LAMP/LNMP Server Tuning & Optimization</li>
+                    <li>Server Replication & Failover Schemes</li>
+                    <li>AWS Cloud Core Infrastructures (Integrating)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Backend Engineering</h3>
+                <ul>
+                    <li>PHP 8.x (Laravel Ecosystem, CodeIgniter)</li>
+                    <li>Python (Flask, Django Frameworks)</li>
+                    <li>Relational Databases (MySQL, MariaDB, Oracle)</li>
+                    <li>In-Memory & NoSQL Data (Redis, MongoDB)</li>
+                    <li>RESTful APIs, USSD Layers, & SMS Gateways</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Selected Engineering History</h2>
+
+        <div class="timeline-item">
+            <div class="job-header">
+                <div class="job-title">Senior Independent Consultant & CEO</div>
+                <div class="job-meta">HOSTHOLIK LTD — 2010 – Present</div>
+            </div>
+            <p class="job-desc">Manage technical specification drafting, structural backend development, and secure Linux environment deployments for international enterprises and public sector clients.</p>
+            <ul class="project-list">
+                <li><strong>National Institute of Statistics (NISR):</strong> Architected the national Centralized Civil Registration system across 416 local administrative sectors and 870 healthcare facilities. Cross-integrated core data points with national ID systems and HMIS networks (DHIS2) to automate population trends analysis.</li>
+                <li><strong>UN WHO (Rwanda):</strong> Served as National Consultant to structure, provision, and deploy their customized regional Learning Management System.</li>
+                <li><strong>UNICEF & NCC:</strong> Developed the integrated "Inshuti Z’ Umuryango" demographic mapping platform running concurrent USSD, mobile SMS, and web portal layers.</li>
+
+                                <li><strong>City of Kigali:</strong> Engineered back-end components for the updated digital building permit portal, embedding cryptographic digital signatures and inspection pipeline automation.</li>
+            </ul>
+            <div class="tags-wrapper">
+                <span class="tag-token">laravel</span>
+                <span class="tag-token">linux-admin</span>
+                <span class="tag-token">docker</span>
+                <span class="tag-token">mysql-replication</span>
+                <span class="tag-token">rest-api</span>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-title">Lead Web Developer</div>
+                <div class="exp-company">Rwanda Development Gateway — 2007 – 2010</div>
+            </div>
+            <p class="exp-desc">Directed software development squads tasked with rolling out digital public assets and web nodes for prominent educational and financial authorities.</p>
+            <ul class="project-tree">
+                <li><strong>Rwanda Revenue Authority:</strong> Designed and deployed the primary web infrastructure and secure transaction processing portals.</li>
+                <li><strong>National University of Rwanda:</strong> Developed underlying relational databases and portal endpoints for centralized student lifecycles and indices.</li>
+            </ul>
+            <div class="tags-wrapper">
+                <span class="tag-token">php-core</span>
+                <span class="tag-token">linux-servers</span>
+                <span class="tag-token">systems-analysis</span>
+                <span class="tag-token">postgresql</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="edu-flex">
+            <div>
+                <div class="edu-degree">M.Sc. in Operational Communications</div>
+                <div class="edu-school">Kigali Institute of Science and Technology (KIST)</div>
+            </div>
+            <div class="edu-date">2010</div>
+        </div>
+        <div class="edu-flex">
+            <div>
+                <div class="edu-degree">B.Sc. in Computer Sciences</div>
+                <div class="edu-school">National University of Rwanda (NUR)</div>
+            </div>
+            <div class="edu-date">2007</div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
+
